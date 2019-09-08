@@ -14,13 +14,13 @@ public class Orgon {
 
     @Id
     @GeneratedValue
-    Long id;
+    private Long id;
 
-    String name;
+    private String name;
 
-    String location;
+    private String location;
 
-    Integer chemtrailsPercentage;
+    private Integer chemtrailsPercentage;
 
     public Orgon(String name, String location, Integer chemtrailsPercentage) {
         this.name = name;

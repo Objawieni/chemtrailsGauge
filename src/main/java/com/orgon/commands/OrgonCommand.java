@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class OrgonCommand {
 
-    String name;
+    private String name;
 
-    String location;
+    private String location;
 
-    Integer chemtrailsPercentage;
+    private Integer chemtrailsPercentage;
 }
