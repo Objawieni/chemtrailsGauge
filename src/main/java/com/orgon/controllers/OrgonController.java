@@ -33,6 +33,7 @@ public class OrgonController {
     @GetMapping("getOrgonById/{id}")
     public ResponseEntity<Orgon> getOrgonById(@PathVariable Long id) {
         Optional<Orgon> orgon = orgonService.getOrgonById(id);
+        log.info("Getting orgon with id: " + id);
 
         return orgon.isPresent() ? new ResponseEntity<>(orgon.get(), HttpStatus.OK) :
                 new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
