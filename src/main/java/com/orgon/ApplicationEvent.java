@@ -1,6 +1,7 @@
 package com.orgon;
 
 import com.orgon.config.Config;
+import com.orgon.config.Messages;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -27,6 +28,6 @@ public class ApplicationEvent implements ApplicationListener<ApplicationReadyEve
         }
         Config.PORT = environment.getProperty("local.server.port");
 
-        log.info("Application is running on http://" + Config.HOSTNAME + ":" + Config.PORT + "api/chemtrails");
+        log.info(Messages.APPLICATION_STARTED_MESSAGE);
     }
 }
