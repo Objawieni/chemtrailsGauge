@@ -12,8 +12,6 @@ public interface OrgonService {
 
     Optional<Orgon> getOrgonById(Long id);
 
-    Optional<Orgon> getOrgonByName(String name);
-
     Orgon addOrgon(Orgon orgon);
 
     Optional<Orgon> removeOrgonById(Long id);

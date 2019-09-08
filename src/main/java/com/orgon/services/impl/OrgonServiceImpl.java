@@ -29,11 +29,6 @@ public class OrgonServiceImpl implements OrgonService {
     }
 
     @Override
-    public Optional<Orgon> getOrgonByName(String name) {
-        return orgonRepository.findByName(name);
-    }
-
-    @Override
     public Orgon addOrgon(Orgon orgon) {
         return orgonRepository.save(orgon);
     }
