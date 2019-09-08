@@ -24,6 +24,7 @@ public class OrgonController {
     @GetMapping("getAllOrgons")
     public ResponseEntity<List<Orgon>> getAllOrgons() {
         List<Orgon> orgonList = orgonService.getOrgonsList();
+        log.info("Gettling all orgons...");
 
         return orgonList.isEmpty() ? new ResponseEntity<>(orgonService.getOrgonsList(), HttpStatus.NO_CONTENT) :
                 new ResponseEntity<>(orgonService.getOrgonsList(), HttpStatus.OK);
