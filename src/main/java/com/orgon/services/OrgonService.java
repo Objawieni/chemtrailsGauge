@@ -18,9 +18,5 @@ public interface OrgonService {
 
     Optional<Orgon> removeOrgonById(Long id);
 
-    Optional<Orgon> removeOrgonByName(String name);
-
     Optional<Orgon> updateOrgonById(Long id, OrgonCommand orgonCommand);
-
-    Optional<Orgon> updateOrgonByName(OrgonCommand orgonCommand);
 }

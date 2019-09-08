@@ -46,11 +46,6 @@ public class OrgonServiceImpl implements OrgonService {
     }
 
     @Override
-    public Optional<Orgon> removeOrgonByName(String name) {
-        return orgonRepository.deleteByName(name);
-    }
-
-    @Override
     public Optional<Orgon> updateOrgonById(Long id, OrgonCommand orgonCommand) {
         Optional<Orgon> orgon = orgonRepository.findById(id);
 
@@ -62,19 +57,5 @@ public class OrgonServiceImpl implements OrgonService {
             return orgonRepository.findById(updatedOrgon.getId());
         }
         return orgon;
-    }
-
-    @Override
-    public Optional<Orgon> updateOrgonByName(OrgonCommand orgonCommand) {
-        Optional<Orgon> orgon = orgonRepository.findByName(orgonCommand.getName());
-
-        if (orgon.isPresent()) {
-            orgonRepository.deleteById(orgon.get().getId());
-            Orgon updatedOrgon = orgonRepository.save(new Orgon(
-                    orgonCommand.getName(), orgonCommand.getLocation(), orgonCommand.getChemtrailsPercentage()
-            ));
-            return orgonRepository.findByName(updatedOrgon.getName());
-        }
-        return Optional.empty();
     }
 }

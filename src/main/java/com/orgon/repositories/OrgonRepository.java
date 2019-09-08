@@ -10,6 +10,4 @@ import java.util.Optional;
 public interface OrgonRepository extends JpaRepository<Orgon, Long> {
 
     Optional<Orgon> findByName(String name);
-
-    Optional<Orgon> deleteByName(String name);
 }

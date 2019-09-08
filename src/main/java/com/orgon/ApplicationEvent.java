@@ -27,6 +27,6 @@ public class ApplicationEvent implements ApplicationListener<ApplicationReadyEve
         }
         Config.PORT = environment.getProperty("local.server.port");
 
-        log.info("Application is running on http://" + Config.HOSTNAME + ":" + Config.PORT);
+        log.info("Application is running on http://" + Config.HOSTNAME + ":" + Config.PORT + "api/chemtrails");
     }
 }
